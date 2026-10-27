@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paraíso dos Anjos Pet &amp; Hotel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Paraíso dos Anjos - Pet &amp; Hotel em Santana de Parnaíba. Banho, tosa e hotel para cães no Parque Paraíso. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+body{margin:0}img{max-width:100%}
+/* Layout: header fixo com CTA, hero em duas colunas com foto grande e selos flutuando, faixas coloridas com ondas,
+   serviços com foto e tabela por porte, passo a passo, hotel em faixa escura, galeria, depoimentos, FAQ, horário+mapa, CTA final */
+:root {
+  --bg: #fffaf3;
+  --surface: #ffffff;
+  --ink: #1d2340;
+  --muted: #5b6182;
+  --orange: #ff7a29;
+  --orange-ink: #ffffff;
+  --navy: #1d2a5c;
+  --sky: #cfe8ff;
+  --mint: #c9f2df;
+  --sun: #ffd23f;
+  --line: #f0e3d2;
+  --wa: #1fae5b;
+  --shadow: 0 18px 40px -18px rgba(29, 42, 92, .35);
+  --display: "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Nunito", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111530; --surface: #1a2046; --ink: #f1f2fb; --muted: #b3b8d8;
+    --orange: #ff8c45; --orange-ink: #1a0d00; --navy: #0a0e24; --sky: #23305f; --mint: #1d3d3a;
+    --sun: #ffd23f; --line: #2b3366; --wa: #2bc46c; --shadow: 0 18px 40px -18px rgba(0,0,0,.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111530; --surface: #1a2046; --ink: #f1f2fb; --muted: #b3b8d8;
+  --orange: #ff8c45; --orange-ink: #1a0d00; --navy: #0a0e24; --sky: #23305f; --mint: #1d3d3a;
+  --sun: #ffd23f; --line: #2b3366; --wa: #2bc46c; --shadow: 0 18px 40px -18px rgba(0,0,0,.7);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+.wrap { max-width: 1140px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; text-wrap: balance; margin: 0; font-weight: 700; }
+h2 { font-size: clamp(2rem, 4.4vw, 2.9rem); }
+p { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 8px; }
+.eyebrow { font-family: var(--display); font-weight: 600; font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); }
+.ex { display: inline-block; font-family: var(--body); font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border: 1px dashed currentColor; border-radius: 6px; padding: 0 5px; vertical-align: middle; margin-left: 6px; line-height: 1.6; }
+
+/* Header */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand .logo { width: 46px; height: 46px; border-radius: 14px; background: var(--orange); color: var(--orange-ink); display: grid; place-items: center; transform: rotate(-6deg); }
+.brand .logo svg { width: 28px; height: 28px; }
+.brand b { font-family: var(--display); font-size: 1.55rem; line-height: 1; display: block; }
+.brand small { display: block; color: var(--muted); font-size: .78rem; font-weight: 700; }
+nav { display: flex; gap: 22px; font-weight: 700; }
+nav a { text-decoration: none; color: var(--muted); }
+nav a:hover { color: var(--orange); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-weight: 800; text-decoration: none; border-radius: 999px; padding: 14px 24px; border: 2px solid transparent; font-size: 1rem; white-space: nowrap; }
+.btn svg { width: 21px; height: 21px; flex: none; }
+.btn-wa { background: var(--wa); color: #fff; box-shadow: 0 10px 24px -10px var(--wa); }
+.btn-orange { background: var(--orange); color: var(--orange-ink); }
+.btn-ghost { border-color: var(--ink); color: var(--ink); }
+.btn-sm { padding: 10px 18px; font-size: .92rem; }
+
+/* Photo slots: real photo on top, illustrated fallback below */
+.ph { position: relative; overflow: hidden; background: var(--sky); display: grid; place-items: center; max-width: 100%; }
+.ph > svg { width: 42%; height: auto; color: var(--navy); opacity: .22; }
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph .cap { position: absolute; left: 12px; bottom: 12px; z-index: 1; background: rgba(255,255,255,.92); color: #1d2340; font-size: .75rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
+
+/* Hero */
+.hero { position: relative; padding-block: 48px 90px; }
+.hero::before { content: ""; position: absolute; right: -10%; top: -20%; width: 60vw; max-width: 720px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--sky) 0 60%, transparent 61%); opacity: .7; z-index: -1; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.6rem); margin-top: 10px; }
+.hero h1 em { font-style: normal; color: var(--orange); position: relative; white-space: nowrap; }
+.hero h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: .02em; height: .22em; background: var(--sun); z-index: -1; border-radius: 6px; transform: rotate(-1.5deg); }
+.hero .lead { font-size: 1.2rem; color: var(--muted); margin-top: 18px; max-width: 32em; }
+.ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.ticks { display: flex; gap: 10px 20px; flex-wrap: wrap; margin-top: 26px; font-weight: 700; font-size: .95rem; }
+.ticks span { display: inline-flex; align-items: center; gap: 7px; }
+.ticks svg { width: 20px; height: 20px; color: var(--wa); }
+.hero-visual { position: relative; }
+.hero-visual .ph { aspect-ratio: 4 / 4.6; border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%; box-shadow: var(--shadow); border: 8px solid var(--surface); }
+.badge { position: absolute; z-index: 2; background: var(--surface); border-radius: 18px; padding: 12px 16px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: .92rem; line-height: 1.2; }
+.badge small { display: block; color: var(--muted); font-weight: 700; font-size: .76rem; }
+.badge .dot { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+.badge .dot svg { width: 22px; height: 22px; }
+.b1 { left: -18px; top: 14%; } .b1 .dot { background: var(--sun); color: #1d2340; }
+.b2 { right: -10px; bottom: 12%; } .b2 .dot { background: var(--mint); color: #0d5c3a; }
+.paw-float { position: absolute; color: var(--orange); opacity: .18; width: 70px; height: 70px; }
+
+/* Wave dividers */
+.wave { display: block; width: 100%; height: 60px; }
+.band-navy { background: var(--navy); color: #fff; }
+.band-mint { background: var(--mint); }
+
+/* Strip */
+.strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-block: 8px 46px; }
+.strip div { display: grid; gap: 4px; }
+.strip b { font-family: var(--display); font-size: 1.6rem; color: var(--sun); line-height: 1.1; }
+.strip span { opacity: .85; font-size: .95rem; }
+
+section { padding-block: 84px; }
+.head { display: grid; gap: 10px; margin-bottom: 40px; max-width: 42em; }
+.head p { color: var(--muted); font-size: 1.08rem; }
+.head.center { text-align: center; margin-inline: auto; justify-items: center; }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.svc { background: var(--surface); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.svc .ph { aspect-ratio: 16 / 10; }
+.svc .ph .tagtop { position: absolute; top: 14px; left: 14px; z-index: 1; background: var(--orange); color: var(--orange-ink); font-weight: 800; font-size: .8rem; padding: 5px 12px; border-radius: 999px; }
+.svc .body { padding: 24px 26px 28px; display: grid; gap: 14px; flex: 1; align-content: start; }
+.svc h3 { font-size: 1.7rem; }
+.svc p { color: var(--muted); }
+.prices { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .95rem; }
+.prices td { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+.prices td:last-child { text-align: right; font-weight: 800; color: var(--orange); }
+.prices tr:last-child td { border-bottom: 0; }
+
+/* Steps */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: s; }
+.step { position: relative; background: var(--surface); border-radius: 26px; padding: 30px 26px; display: grid; gap: 10px; }
+.step::before { counter-increment: s; content: counter(s); font-family: var(--display); font-size: 1.4rem; font-weight: 700; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: var(--orange-ink); }
+.step h3 { font-size: 1.35rem; }
+.step p { color: var(--muted); }
+
+/* Hotel */
+.hotel .wrap { display: grid; grid-template-columns: .95fr 1.05fr; gap: 56px; align-items: center; }
+.hotel h2 { color: #fff; }
+.hotel .lead { opacity: .85; margin-top: 14px; font-size: 1.08rem; }
+.hotel .eyebrow { color: var(--sun); }
+.feats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.feat { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 16px; display: grid; gap: 4px; }
+.feat b { font-family: var(--display); font-size: 1.1rem; font-weight: 600; }
+.feat span { opacity: .78; font-size: .92rem; }
+.hotel-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.hotel-photos .ph { border-radius: 26px; aspect-ratio: 3 / 4; }
+.hotel-photos .ph:nth-child(2) { margin-top: 48px; }
+.hotel .ex { color: #c9cde6; }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 16px; }
+.gallery .ph { border-radius: 22px; }
+.gallery .ph.tall { grid-row: span 2; }
+.gallery .ph.wide { grid-column: span 2; }
+
+/* Testimonials */
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.review { background: var(--surface); border-radius: 24px; padding: 26px; display: grid; gap: 14px; align-content: start; border: 2px dashed var(--line); }
+.stars { color: var(--sun); letter-spacing: 2px; font-size: 1.1rem; }
+.review p { font-size: 1.02rem; }
+.who { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+.who i { width: 40px; height: 40px; border-radius: 50%; background: var(--sky); display: grid; place-items: center; font-style: normal; font-family: var(--display); color: var(--navy); }
+.who small { display: block; color: var(--muted); font-weight: 600; }
+.note { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 18px; }
+
+/* FAQ */
+.faq { display: grid; gap: 12px; max-width: 820px; margin-inline: auto; }
+details { background: var(--surface); border-radius: 18px; padding: 4px 22px; border: 1px solid var(--line); }
+summary { cursor: pointer; list-style: none; font-family: var(--display); font-weight: 600; font-size: 1.15rem; padding: 16px 0; display: flex; justify-content: space-between; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--orange); font-size: 1.5rem; line-height: 1; }
+details[open] summary::after { content: "–"; }
+details p { color: var(--muted); padding-bottom: 18px; }
+
+/* Visit */
+.visit { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; }
+.card { background: var(--surface); border-radius: 26px; padding: 30px; box-shadow: var(--shadow); min-width: 0; }
+.card h3 { font-size: 1.5rem; margin-bottom: 16px; }
+.hours { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.hours td { padding: 11px 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-weight: 800; }
+.hours tr:last-child td { border-bottom: 0; }
+.addr { font-family: var(--display); font-size: 1.35rem; font-weight: 600; }
+.addr + p { color: var(--muted); margin-bottom: 16px; }
+.map { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 8; max-width: 100%; border-radius: 20px; overflow: hidden; background: var(--sky); text-decoration: none; }
+.map svg.streets { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--surface); opacity: .8; }
+.map .pin { position: relative; display: grid; justify-items: center; gap: 8px; font-weight: 800; }
+.map .pin svg { width: 46px; height: 46px; color: var(--orange); filter: drop-shadow(0 6px 8px rgba(0,0,0,.25)); }
+.map .pin span { background: var(--surface); padding: 6px 14px; border-radius: 999px; box-shadow: var(--shadow); }
+
+/* Final CTA */
+.final { padding-block: 0 84px; }
+.final .box { background: var(--orange); color: var(--orange-ink); border-radius: 36px; padding: 56px 40px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; position: relative; overflow: hidden; }
+.final .box::after { content: ""; position: absolute; right: -60px; bottom: -80px; width: 280px; height: 280px; border-radius: 50%; background: rgba(255,255,255,.14); }
+.final h2 { color: inherit; }
+.final p { margin-top: 10px; opacity: .92; font-size: 1.1rem; }
+.final .btn-wa { justify-self: end; position: relative; z-index: 1; font-size: 1.1rem; padding: 18px 28px; background: #fff; color: #128a45; }
+
+footer { background: var(--navy); color: #fff; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 30px 100px; font-size: .92rem; }
+footer span { opacity: .8; }
+footer a { color: var(--sun); font-weight: 800; }
+
+.fab { position: fixed; right: calc(18px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); width: 62px; height: 62px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0,0,0,.3); z-index: 8; }
+.fab svg { width: 32px; height: 32px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .fab, .svc { transition: transform .2s ease, box-shadow .2s ease; }
+  .btn:hover, .fab:hover { transform: translateY(-2px); }
+  .svc:hover { transform: translateY(-6px); }
+  .badge { animation: bob 4s ease-in-out infinite; }
+  .b2 { animation-delay: -2s; }
+  .fab::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--wa); animation: pulse 2.4s ease-out infinite; z-index: -1; }
+  .reveal { animation: rise .7s ease both; }
+  .reveal.d1 { animation-delay: .12s; } .reveal.d2 { animation-delay: .24s; }
+  @keyframes bob { 50% { transform: translateY(-8px); } }
+  @keyframes pulse { from { transform: scale(1); opacity: .5; } to { transform: scale(1.7); opacity: 0; } }
+  @keyframes rise { from { transform: translateY(18px); } to { transform: none; } }
+}
+
+@media (max-width: 900px) {
+  nav { display: none; }
+  .hero .wrap, .hotel .wrap, .visit, .final .box { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 440px; justify-self: center; width: 100%; }
+  .services, .steps, .reviews { grid-template-columns: 1fr; }
+  .strip .wrap { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .final .btn-wa { justify-self: start; }
+  .final .box { padding: 40px 24px; }
+}
+@media (max-width: 480px) {
+  .header-cta { display: none; }
+  .b1 { left: 0; } .b2 { right: 0; }
+  .feats { grid-template-columns: 1fr; }
+  .btn { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="paw" viewBox="0 0 64 64"><g fill="currentColor"><ellipse cx="32" cy="42" rx="14" ry="12"/><ellipse cx="14" cy="27" rx="6" ry="8"/><ellipse cx="25" cy="16" rx="6" ry="8"/><ellipse cx="39" cy="16" rx="6" ry="8"/><ellipse cx="50" cy="27" rx="6" ry="8"/></g></symbol>
+  <symbol id="dog" viewBox="0 0 120 120"><g fill="currentColor"><path d="M30 34c-8-2-16 6-14 22 1 8 6 12 10 10l6-24z"/><path d="M90 34c8-2 16 6 14 22-1 8-6 12-10 10l-6-24z"/><path d="M60 26c-20 0-32 14-32 34 0 22 14 38 32 38s32-16 32-38c0-20-12-34-32-34z" opacity=".5"/><circle cx="48" cy="56" r="5"/><circle cx="72" cy="56" r="5"/><ellipse cx="60" cy="72" rx="8" ry="6"/></g></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 15A8 8 0 1 1 9 4a6.5 6.5 0 0 0 11 11z"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+</svg>
+
+<header><div class="wrap">
+  <a class="brand" href="#inicio" aria-label="Paraíso dos Anjos, início">
+    <span class="logo"><svg aria-hidden="true"><use href="#paw"/></svg></span>
+    <span><b>Paraíso dos Anjos</b><small>Pet &amp; Hotel</small></span>
+  </a>
+  <nav aria-label="Seções"><a href="#servicos">Serviços</a><a href="#hotel">Hotel</a><a href="#fotos">Fotos</a><a href="#duvidas">Dúvidas</a><a href="#visite">Endereço</a></nav>
+  <a class="btn btn-wa btn-sm header-cta" href="https://wa.me/5511994897420?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20no%20Para%C3%ADso%20dos%20Anjos." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar</a>
+</div></header>
+
+<main id="inicio">
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow reveal">Parque Paraíso · Santana de Parnaíba</span>
+    <h1 class="reveal d1">Seu cão <em>limpinho</em>, feliz e bem cuidado.</h1>
+    <p class="lead reveal d2">Banho, tosa e hotel para cães com hora marcada e muito carinho. Chame no WhatsApp e garanta o horário do seu melhor amigo. <span class="ex">texto exemplo</span></p>
+    <div class="ctas">
+      <a class="btn btn-wa" href="https://wa.me/5511994897420?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20banho%20no%20Para%C3%ADso%20dos%20Anjos." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Agendar banho e tosa</a>
+      <a class="btn btn-ghost" href="#hotel">Conhecer o hotel</a>
+    </div>
+    <div class="ticks">
+      <span><svg aria-hidden="true"><use href="#check"/></svg>Hora marcada</span>
+      <span><svg aria-hidden="true"><use href="#check"/></svg>Fotos do seu pet</span>
+      <span><svg aria-hidden="true"><use href="#check"/></svg>Produtos para cada pelagem</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <svg class="paw-float" style="left:-40px;bottom:-30px" aria-hidden="true"><use href="#paw"/></svg>
+    <svg class="paw-float" style="right:10px;top:-40px;width:44px;height:44px" aria-hidden="true"><use href="#paw"/></svg>
+    <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Cachorro feliz depois do banho" onerror="this.remove()"></div>
+    <div class="badge b1"><span class="dot"><svg aria-hidden="true"><use href="#heart"/></svg></span><span>Atendimento com carinho<small>um pet por vez na mesa</small></span></div>
+    <div class="badge b2"><span class="dot"><svg aria-hidden="true"><use href="#moon"/></svg></span><span>Hotel para cães<small>diárias e fins de semana</small></span></div>
+  </div>
+</div></section>
+
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="color:var(--navy);margin-bottom:-1px"><path fill="currentColor" d="M0 40c240-40 480-40 720-10s480 30 720-10v40H0z"/></svg>
+<div class="band-navy strip"><div class="wrap">
+  <div><b>Banho</b><span>com secagem e escovação</span></div>
+  <div><b>Tosa</b><span>higiênica, máquina ou tesoura</span></div>
+  <div><b>Hotel</b><span>seu cão em casa longe de casa</span></div>
+  <div><b>WhatsApp</b><span>(11) 99489-7420</span></div>
+</div></div>
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="color:var(--navy);margin-top:-1px;transform:scaleY(-1)"><path fill="currentColor" d="M0 40c240-40 480-40 720-10s480 30 720-10v40H0z"/></svg>
+
+<section id="servicos" style="padding-top:56px"><div class="wrap">
+  <div class="head"><span class="eyebrow">Serviços</span><h2>Do banho rápido à tosa completa</h2><p>Valores por porte, para você saber quanto vai pagar antes de agendar. <span class="ex">preços exemplo</span></p></div>
+  <div class="services">
+    <article class="svc">
+      <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Cachorro tomando banho" onerror="this.remove()"><span class="tagtop">Mais pedido</span></div>
+      <div class="body">
+        <h3>Banho</h3>
+        <p>Shampoo certo para a pelagem, secagem, escovação, limpeza de ouvidos, corte de unhas e perfume.</p>
+        <table class="prices"><tr><td>Pequeno porte</td><td>R$ 50</td></tr><tr><td>Médio porte</td><td>R$ 65</td></tr><tr><td>Grande porte</td><td>R$ 85</td></tr></table>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Cachorro com pelo tosado" onerror="this.remove()"></div>
+      <div class="body">
+        <h3>Banho + tosa</h3>
+        <p>Tosa higiênica, na máquina, na tesoura ou no padrão da raça. Sempre com o banho completo incluso.</p>
+        <table class="prices"><tr><td>Pequeno porte</td><td>R$ 80</td></tr><tr><td>Médio porte</td><td>R$ 100</td></tr><tr><td>Grande porte</td><td>R$ 130</td></tr></table>
+      </div>
+    </article>
+    <article class="svc">
+      <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Cachorro descansando no hotel" onerror="this.remove()"></div>
+      <div class="body">
+        <h3>Hotel</h3>
+        <p>Hospedagem com rotina, ração no horário de casa, brincadeiras e notícias pelo WhatsApp.</p>
+        <table class="prices"><tr><td>Diária</td><td>R$ 80</td></tr><tr><td>Fim de semana</td><td>R$ 150</td></tr><tr><td>Pacote 7 dias</td><td>R$ 490</td></tr></table>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section class="band-mint"><div class="wrap">
+  <div class="head center"><span class="eyebrow">Como funciona</span><h2>Agendar leva um minuto</h2></div>
+  <div class="steps">
+    <div class="step"><h3>Chame no WhatsApp</h3><p>Diga o porte e o serviço. A gente responde com o valor e os horários livres.</p></div>
+    <div class="step"><h3>Traga seu cão</h3><p>Receba ele no horário marcado. Conte se tem alergia, medo de secador ou alguma manha.</p></div>
+    <div class="step"><h3>Busque cheiroso</h3><p>Avisamos pelo WhatsApp quando estiver pronto, com foto do resultado.</p></div>
+  </div>
+</div></section>
+
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="color:var(--navy);margin-bottom:-1px;background:var(--mint)"><path fill="currentColor" d="M0 40c240-40 480-40 720-10s480 30 720-10v40H0z"/></svg>
+<section class="hotel band-navy" id="hotel" style="padding-top:40px"><div class="wrap">
+  <div>
+    <span class="eyebrow">Hotel para cães</span>
+    <h2>Viaje tranquilo. Ele fica em boas patas.</h2>
+    <p class="lead">Deixar o cachorro com alguém pede confiança. No hotel do Paraíso dos Anjos ele mantém a rotina, brinca, descansa e você recebe notícias todos os dias. <span class="ex">texto exemplo</span></p>
+    <div class="feats">
+      <div class="feat"><b>Visita antes</b><span>Conheça o espaço antes da primeira estadia.</span></div>
+      <div class="feat"><b>Fotos diárias</b><span>Atualizações pelo WhatsApp durante a hospedagem.</span></div>
+      <div class="feat"><b>Vacinas em dia</b><span>Exigidas de todos os hóspedes, para segurança de todos.</span></div>
+      <div class="feat"><b>Banho de saída</b><span>Ele volta para casa limpinho, se você quiser.</span></div>
+    </div>
+    <div class="ctas"><a class="btn btn-orange" href="https://wa.me/5511994897420?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20o%20hotel%20para%20c%C3%A3es%20do%20Para%C3%ADso%20dos%20Anjos." target="_blank" rel="noopener">Reservar hospedagem</a></div>
+  </div>
+  <div class="hotel-photos">
+    <div class="ph"><svg aria-hidden="true"><use href="#paw"/></svg><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Cães brincando juntos" onerror="this.remove()"></div>
+    <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=600&amp;q=70" alt="Cachorro recebendo carinho" onerror="this.remove()"></div>
+  </div>
+</div></section>
+<svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" style="color:var(--navy);margin-top:-1px;transform:scaleY(-1)"><path fill="currentColor" d="M0 40c240-40 480-40 720-10s480 30 720-10v40H0z"/></svg>
+
+<section id="fotos" style="padding-top:56px"><div class="wrap">
+  <div class="head"><span class="eyebrow">Nossos clientes</span><h2>Quem passou por aqui</h2><p>Aqui entram as fotos reais dos pets atendidos e do espaço. É o que mais convence quem está escolhendo.</p></div>
+  <div class="gallery">
+    <div class="ph tall"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&amp;fit=crop&amp;w=500&amp;q=70" alt="" onerror="this.remove()"><span class="cap">Foto do cliente</span></div>
+    <div class="ph wide"><svg aria-hidden="true"><use href="#paw"/></svg><img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" onerror="this.remove()"><span class="cap">Foto do espaço</span></div>
+    <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&amp;fit=crop&amp;w=500&amp;q=70" alt="" onerror="this.remove()"><span class="cap">Antes</span></div>
+    <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&amp;fit=crop&amp;w=500&amp;q=70" alt="" onerror="this.remove()"><span class="cap">Depois</span></div>
+    <div class="ph wide"><svg aria-hidden="true"><use href="#paw"/></svg><img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" onerror="this.remove()"><span class="cap">Hotel</span></div>
+    <div class="ph"><svg aria-hidden="true"><use href="#dog"/></svg><span class="cap">Foto do cliente</span></div>
+  </div>
+</div></section>
+
+<section class="band-mint"><div class="wrap">
+  <div class="head center"><span class="eyebrow">Depoimentos</span><h2>O que os tutores dizem</h2></div>
+  <div class="reviews">
+    <figure class="review" style="margin:0"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>Espaço reservado para uma avaliação real do Google do Paraíso dos Anjos, com o nome do tutor e do pet.</p><figcaption class="who"><i>A</i><span>Nome do tutor<small>tutor do ...</small></span></figcaption></figure>
+    <figure class="review" style="margin:0"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>Espaço reservado para uma avaliação real sobre o banho e a tosa.</p><figcaption class="who"><i>B</i><span>Nome do tutor<small>tutora da ...</small></span></figcaption></figure>
+    <figure class="review" style="margin:0"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>Espaço reservado para uma avaliação real de quem usou o hotel.</p><figcaption class="who"><i>C</i><span>Nome do tutor<small>hóspede do hotel</small></span></figcaption></figure>
+  </div>
+  <p class="note">Prévia: aqui entram avaliações reais dos clientes do Paraíso dos Anjos.</p>
+</div></section>
+
+<section id="duvidas"><div class="wrap">
+  <div class="head center"><span class="eyebrow">Dúvidas</span><h2>Perguntas frequentes</h2><p>Respostas de exemplo, para o Paraíso dos Anjos ajustar. <span class="ex">exemplo</span></p></div>
+  <div class="faq">
+    <details open><summary>Preciso agendar?</summary><p>Sim. Trabalhamos com hora marcada para seu cão não ficar esperando. Agende pelo WhatsApp (11) 99489-7420.</p></details>
+    <details><summary>Quanto tempo demora o banho?</summary><p>Em média de 1h30 a 2h, dependendo do porte e da pelagem. Avisamos pelo WhatsApp quando estiver pronto.</p></details>
+    <details><summary>Quais documentos o hotel pede?</summary><p>Carteira de vacinação em dia (V8 ou V10 e antirrábica) e o vermífugo atualizado.</p></details>
+    <details><summary>Vocês atendem cães bravos ou idosos?</summary><p>Sim, com mais calma e tempo. Conte as particularidades do seu cão na hora de agendar.</p></details>
+  </div>
+</div></section>
+
+<section id="visite" style="padding-top:0"><div class="wrap">
+  <div class="head"><span class="eyebrow">Visite</span><h2>Estamos no Parque Paraíso</h2></div>
+  <div class="visit">
+    <div class="card">
+      <h3>Horário <span class="ex">exemplo</span></h3>
+      <table class="hours">
+        <tr><td>Segunda a sexta</td><td>8h às 18h</td></tr>
+        <tr><td>Sábado</td><td>8h às 15h</td></tr>
+        <tr><td>Domingo</td><td>Só hotel</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <p class="addr">R. dos Anjos, 52 - Parque Paraíso</p>
+      <p>Santana de Parnaíba - SP · (11) 99489-7420</p>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=R.+dos+Anjos,+52+-+Parque+Para%C3%ADso,+Santana+de+Parna%C3%ADba+-+SP" target="_blank" rel="noopener" aria-label="Abrir endereço no Google Maps">
+        <svg class="streets" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round"><path stroke-width="14" d="M-10 70H410M120 -10V210"/><path stroke-width="8" d="M-10 150H410M290 -10V210M-10 210 410 0"/></g></svg>
+        <span class="pin"><svg aria-hidden="true"><use href="#pin"/></svg><span>Abrir no Google Maps</span></span>
+      </a>
+    </div>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap"><div class="box">
+  <div><h2>Bora deixar seu cão cheiroso?</h2><p>Chame agora e garanta o horário desta semana.</p></div>
+  <a class="btn btn-wa" href="https://wa.me/5511994897420?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20no%20Para%C3%ADso%20dos%20Anjos." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>(11) 99489-7420</a>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Paraíso dos Anjos - Pet &amp; Hotel · R. dos Anjos, 52 - Parque Paraíso, Santana de Parnaíba/SP</span>
+  <span>Site feito por <a href="https://solodevstudio.com.br/" target="_blank" rel="noopener">SoloDev Estúdio</a></span>
+</div></footer>
+
+<a class="fab" href="https://wa.me/5511994897420?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio%20no%20Para%C3%ADso%20dos%20Anjos." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+</body>
+</html>
